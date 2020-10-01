@@ -9,24 +9,23 @@
         }, options);
 
         var self = this;
-        var cointainer = '\
-                        <div class="modal fade" id="confirmBoot" role="dialog" aria-labelledby="confirmDeleteLabel" aria-hidden="true">\
-                          <div class="modal-dialog">\
-                            <div class="modal-content">\
-                              <div class="modal-header">\
-                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>\
-                                <h4 class="modal-title">Confirm action</h4>\
-                              </div>\
-                              <div class="modal-body">\
-                                <p>Are you sure about this ?</p>\
-                              </div>\
-                              <div class="modal-footer">\
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>\
-                                <button type="button" class="btn btn-success btn-ok" id="confirm">Ok</button>\
-                              </div>\
-                            </div>\
-                          </div>\
-                        </div>';
+        var cointainer = `<div class="modal fade" id="confirmBoot" role="dialog" aria-labelledby="confirmDeleteLabel" aria-hidden="true"> 
+                          <div class="modal-dialog"> 
+                            <div class="modal-content"> 
+                              <div class="modal-header"> 
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button> 
+                                <h4 class="modal-title">Confirm action</h4> 
+                              </div> 
+                              <div class="modal-body"> 
+                                <p>Are you sure about this ?</p> 
+                              </div> 
+                              <div class="modal-footer"> 
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button> 
+                                <button type="button" class="btn btn-success btn-ok" id="confirm">Ok</button> 
+                              </div> 
+                            </div> 
+                          </div> 
+                        </div>`;
 
         return this.each(function () {
             var self = this;
