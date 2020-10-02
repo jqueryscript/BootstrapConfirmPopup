@@ -1,5 +1,2 @@
 # BootstrapConfirmPopup
-The Jquery/Bootstrap plugin that reduce developer's code &amp; work. (benificial for asp.net MVC)
-
-
-Checkout for more detail here http://thankikaushik.github.io/BootstrapConfirmPopup/
+A tiny and simple-to-use jQuery plugin that creates a Bootstrap based confirm modal to gracefully confirm user actions like submitting a form, deleting an item, etc.
