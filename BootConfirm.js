@@ -9,22 +9,22 @@
         }, options);
 
         var self = this;
-        var cointainer = `<div class="modal fade" id="confirmBoot" role="dialog" aria-labelledby="confirmDeleteLabel" aria-hidden="true"> 
-                          <div class="modal-dialog"> 
-                            <div class="modal-content"> 
-                              <div class="modal-header"> 
-                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button> 
-                                <h4 class="modal-title">Confirm action</h4> 
-                              </div> 
-                              <div class="modal-body"> 
-                                <p>Are you sure about this ?</p> 
-                              </div> 
-                              <div class="modal-footer"> 
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button> 
-                                <button type="button" class="btn btn-success btn-ok" id="confirm">Ok</button> 
-                              </div> 
-                            </div> 
-                          </div> 
+        var cointainer = `<div class="modal fade" id="confirmBoot" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="confirmDeleteLabel" aria-hidden="true">
+                          <div class="modal-dialog">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                              <h4 class="modal-title" id="confirmDeleteLabel">Confirm action</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close" aria-hidden="true">&times;</button>
+                              </div>
+                              <div class="modal-body">
+                                <p>Are you sure about this ?</p>
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-info" data-dismiss="modal">Cancel</button>
+                                <button type="button" class="btn btn-danger btn-ok" id="confirm">Ok</button>
+                              </div>
+                            </div>
+                          </div>
                         </div>`;
 
         return this.each(function () {
@@ -32,7 +32,7 @@
             var allow = false;
             $(this).click(function (e)
             {
-               
+
                 var eventname = e.type;
                 if (!$('#confirmBoot').length) {
                     $('body').append(cointainer);
@@ -44,14 +44,14 @@
                     e.preventDefault();
                     if (settings.validateForm)
                     {
-                        
+
                         if (typeof $(self).parents('form').valid() != "undefined") {
                             // safe to use the function
                             if (!$(self).parents('form').valid()) {
                                 return false;
                             }
                         }
-                                              
+
                     }
                     $('#confirmBoot').modal({ show: true });
                     $('#confirmBoot').find('.btn-ok').click(function () {
@@ -64,7 +64,7 @@
                         else
                         {
                             $('#confirmBoot').modal("hide");
-                            $('#confirmBoot').find('.btn-ok').off('click');                            
+                            $('#confirmBoot').find('.btn-ok').off('click');
                             allow = true;
                             $(this).off('click');
                             $(self).trigger(eventname);
